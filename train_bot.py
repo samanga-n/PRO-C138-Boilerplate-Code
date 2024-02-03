@@ -57,5 +57,48 @@ print(stem_words)
 print(classes)
 
 #Create Bag Of Words
+training_data = []
+number_of_tags = len(classes)
+labels = [0]*number_of_tags
 
+# Create bag od words and labels_encoding
+for word_tags in word_tags_list:
+        
+        bag_of_words = []       
+        pattern_words = word_tags[0]
+       
+        for word in pattern_words:
+            index=pattern_words.index(word)
+              
+
+        for word in stem_words:
+            if word in pattern_words:
+                bag_of_words.append(1)
+            else:
+                bag_of_words.append(0)
+        print(bag_of_words)
+
+         #labels all zeroes initially
+    
+        #save tag
+        
+        #go to index of tag
+        
+        #append 1 at that index
+       
+        training_data.append([bag_of_words, labels_encoding])
+
+print(training_data[0])
+
+# Create training data
+def preprocess_train_data(training_data):
+   
+    training_data = np.array(training_data, dtype=object)
+    
+    train_x = list(training_data[:,0])
+    train_y = list(training_data[:,1])
+
+    
+
+train_x, train_y = preprocess_train_data(training_data)
 #Create training data
